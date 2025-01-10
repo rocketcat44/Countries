@@ -17,6 +17,7 @@ public class Main
   private ImageIcon img;
   private JLabel imageLabel;
   private JLabel outputLabel;
+  private JTextField peepeepoopoo;
   
   public static void main(String[] args) {
     // Create the GUI
@@ -64,14 +65,16 @@ public class Main
     // Use the following code to create an new Image Icon and put it into the GUI
     img = new ImageIcon("/workspaces/Countries/workspace/" + imagefile);
     imageLabel.setIcon(img);
+    outputLabel.setText("What country is this?");
   }
   
   /* nextButton should increment index. If the index is greater than 9, reset it back to 0. Clear the outputLabel to empty string using setText, and call showCountry();*/
   public void nextButtonClick()
   {
     if (index > 9){index=0;}else{index+=1;}
-    outputLabel.setText("");
+    outputLabel.setText("What country is this?");
     showCountry();
+    peepeepoopoo.setText("");
   }
   
   /* reviewButton should get the country at index from the countryArray, call its toString() method and save the result, print it out with System.out.println and as an argument to outputLabel.setText( text to print out ); */
@@ -88,11 +91,11 @@ public class Main
   */
   public void quizButtonClick()
   {
-    Scanner scan = new Scanner(System.in); 
     outputLabel.setText("");
     Country c = countryArray[index];
-    System.out.println("What country is this?");
-    System.out.println(scan.nextLine().toLowerCase().equals(c.getName().toLowerCase())+ ", the answer is " + c.getName());
+    System.out.println(peepeepoopoo.getText());
+    if (peepeepoopoo.getText().toLowerCase().equals(c.getName().toLowerCase())){outputLabel.setText("Correct!");}else{outputLabel.setText("Wrong! The correct answer is: " + c.getName());}
+    
   }
 
 
@@ -106,8 +109,9 @@ public Main() {
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // buttons at the top
         JButton reviewButton = new JButton("Review");
-        JButton quizButton = new JButton("Quiz");
+        JButton quizButton = new JButton("Check");
         JButton newButton = new JButton("Next");
+        
         jFrame.add(reviewButton);
         jFrame.add(quizButton);
         jFrame.add(newButton);
@@ -120,6 +124,13 @@ public Main() {
         outputLabel = new JLabel();
         jFrame.add(imageLabel);
         jFrame.add(outputLabel);
+
+
+        //////////input
+        peepeepoopoo = new JTextField(20);
+        jFrame.add(peepeepoopoo);
+
+
         jFrame.setVisible(true);
         // add event listener for button click
         reviewButton.addActionListener(new ActionListener() {
