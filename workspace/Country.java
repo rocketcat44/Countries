@@ -29,7 +29,6 @@ public class Country
   public String getImage(){return image;}
 
   // Write a toString() method that returns a concatenated String of 3 of the instance variables in a sentence like "..'s capital is .. and its primary language is ..."
- 
   public String toString(){
     return name + "'s capital is " + capital + " and its primary language is " + language;
   }

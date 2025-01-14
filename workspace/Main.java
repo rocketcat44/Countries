@@ -26,7 +26,8 @@ public class Main
     gui.showCountry();
   }
 
-  /* loadCountries() reads in the data from the countries-data.csv file and fills in the countryArray with data. You need to add the loop that reads in the country data into the array. */
+  //precondition: none
+  // postcondition:  reads in the data from the countries-data.csv file and fills in the countryArray with data
   public void loadCountries() 
   {
     // Open the data file - do not change
@@ -55,8 +56,8 @@ public class Main
     
   }
 
-  /* showCountry() will show the image associated with the current country. It should get the country at index from the countryArray. It should use its get method to get its image file name and use the code below to put the image in the GUI.
-  */
+  //precondition: none
+  // postcondition: will show the image associated with the current country. It should get the country at index from the countryArray. It should use its get method to get its image file name and use the code below to put the image in the GUI.
   public void showCountry() {
     // Get the country at index from countryArray
     Country c = countryArray[index];
@@ -68,7 +69,8 @@ public class Main
     outputLabel.setText("What country is this?");
   }
   
-  /* nextButton should increment index. If the index is greater than 9, reset it back to 0. Clear the outputLabel to empty string using setText, and call showCountry();*/
+    //precondition: none
+  // postcondition: increments index. If the index is greater than 9, reset it back to 0. 
   public void nextButtonClick()
   {
     if (index > 9){index=0;}else{index+=1;}
@@ -77,7 +79,8 @@ public class Main
     peepeepoopoo.setText("");
   }
   
-  /* reviewButton should get the country at index from the countryArray, call its toString() method and save the result, print it out with System.out.println and as an argument to outputLabel.setText( text to print out ); */
+  //precondition: none
+  // postcondition: get the country at index from the countryArray, call its toString() method and save the result, print it out with System.out.println and as an argument to outputLabel.setText( text to print out )
   public void reviewButtonClick()
   {
     Country c = countryArray[index];
@@ -89,6 +92,8 @@ public class Main
 
   /* quizButton should clear the outputLabel (outputLabel.setText to empty string), get the country at index from countryArray, print out a question about it like What country is this? and/or What's this country's capital?. Get the user's answer using scan.nextLine() and check if it is equal to the country's data using its get methods and print out correct or incorrect.
   */
+  // precondition: none
+  // postcondition: clear the outputLabel (outputLabel.setText to empty string), get the country at index from countryArray, print out a question about it like What country is this? and/or What's this country's capital?. Get the user's answer using scan.nextLine() and check if it is equal to the country's data using its get methods and print out correct or incorrect.clear the outputLabel (outputLabel.setText to empty string), get the country at index from countryArray, print out a question about it like What country is this? and/or What's this country's capital?. Get the user's answer using scan.nextLine() and check if it is equal to the country's data using its get methods and print out correct or incorrect.
   public void quizButtonClick()
   {
     outputLabel.setText("");
