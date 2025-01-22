@@ -1,3 +1,12 @@
+/*
+ * Bella
+ * 1/14/2025
+ * 
+ * This program is a fun little game where you can test your map knowledge by entering the highlighted country in the image in the text box and click check to check your answer.
+ */
+
+
+
 public class Country
 {
   // add private instance variables for the name, capital, language, and image file.
